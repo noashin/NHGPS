@@ -472,6 +472,9 @@ class VI():
         self.calculate_posterior_intensity()
 
         converged = False
+
+        self.hyper_params_list.append(self.hyper_params)
+
         while not converged or self.num_iterations < min_num_iterations:
             self.num_iterations += 1
             # Update q2
