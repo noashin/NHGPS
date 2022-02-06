@@ -75,6 +75,11 @@ def main(yml_file, output_path):
     # save everything in the results folder
     with open(data_path, 'rb') as f:
         data = pickle.load(f)
+
+    if syn_data:
+        observations = data[0]
+    else:
+        observations = data
     with open(os.path.join(output_folder, 'input.yml'), 'w') as f:
         yaml.dump(config, f)
     with open(os.path.join(output_folder, 'data_input.yml'), 'w') as f:
@@ -102,7 +107,7 @@ def main(yml_file, output_path):
                           num_integration_points=num_integration_points,
                           noise=noise)
 
-    hawkes_vi_object.set_data(data)
+    hawkes_vi_object.set_data(observations)
 
     hawkes_vi_object.run(save_steps=save_steps, file_path=file_path, hyper_parms_inference=infer_hypers,
                          infer_max_intensity=infer_max_intensity, grad_step_size=grad_step_size,
