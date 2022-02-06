@@ -76,6 +76,7 @@ def main(yml_file, output_path):
     hawkes_vi_object.ks_int_points, hawkes_vi_object.ks_X, hawkes_vi_object.observations, \
     hawkes_vi_object.Sigma_g_s, hawkes_vi_object.mu_g_s, hawkes_vi_object.lmbda_star_q1, \
     hawkes_vi_object.alpha_q1, hawkes_vi_object.beta_q1 = inference_results
+
     with open(os.path.join(output_folder, 'inference_results.p'), 'wb') as f:
         pickle.dump(inference_results, f)
 
@@ -91,6 +92,7 @@ def main(yml_file, output_path):
     res_file = os.path.join(output_folder, 's_g_res.p')
     with open(res_file, 'wb') as f:
         pickle.dump([grid, s, g, cov_s, cov_g], f)
+
 
 if __name__ == '__main__':
     main()
