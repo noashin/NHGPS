@@ -2,12 +2,9 @@ import os
 import sys
 import time
 import pickle
-from shutil import copyfile
-import traceback
 
 sys.path.append('../../')
 
-import jax
 import numpy as np
 from jax import config as config_jax
 import click
