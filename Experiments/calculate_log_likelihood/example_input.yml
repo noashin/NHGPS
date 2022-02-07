@@ -1,0 +1,4 @@
+data_path: path/to/yml
+inference_results_path: path/to/inference/results
+test_data_path: path/to/test/data
+num_samples: 10000
