@@ -33,15 +33,24 @@ def main(yml_file, output_path):
         inference_results_path = config.get('inference_results_path', './')
         test_data_path = config.get('test_data_path', './')
         num_samples = config.get('num_samples', 1000)
+        syn_data = config.get('syn_data', False)
 
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
     with open(data_path, 'rb') as f:
         data = pickle.load(f)
+    if syn_data:
+        observations = data[0]
+    else:
+        observations = data
 
     with open(test_data_path, 'rb') as f:
         test_set_data = pickle.load(f)
+    if syn_data:
+        test_observations = test_set_data[0]
+    else:
+        test_observations = test_set_data
 
     with open(os.path.join(output_folder, 'input.yml'), 'w') as f:
         yaml.dump(config, f)
@@ -54,7 +63,7 @@ def main(yml_file, output_path):
         pickle.dump(test_set_data, f)
 
     hawkes_vi_object = VI(0, [], 0)
-    hawkes_vi_object.set_data(data)
+    hawkes_vi_object.set_data(observations)
 
     with open(inference_results_path, 'rb') as f:
         inference_results = pickle.load(f)
@@ -75,7 +84,7 @@ def main(yml_file, output_path):
         hawkes_vi_object.induced_points_trials_inds = np.hstack(
             [np.repeat(n, hawkes_vi_object.induced_points[n].shape[0]) for n in range(hawkes_vi_object.num_trials)])
 
-    ll, intensities = hawkes_vi_object.loglikelihood_test_data_new_trials(test_set_data,
+    ll, intensities = hawkes_vi_object.loglikelihood_test_data_new_trials(test_observations,
                                                               num_samples=num_samples)
     ll_file = os.path.join(output_folder, 'test_ll_res.p')
     with open(ll_file, 'wb') as f:
