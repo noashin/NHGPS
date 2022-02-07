@@ -39,6 +39,14 @@ class NHGPS():
         self.phis = []
         self.self_effects = []
 
+    def reset_intensities(self):
+        """
+        This method resets the intensities, phis and self effects
+        """
+        self.intensities = []
+        self.phis = []
+        self.self_effects = []
+
     def generate_temporal_gp(self, grid_points):
         """
         This method generates a 1d gp sample given 1d data vector, and stores it as a class attribute.
