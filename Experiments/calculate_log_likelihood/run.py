@@ -60,7 +60,7 @@ def main(yml_file, output_path):
         pickle.dump(test_set_data, f)
 
     hawkes_vi_object = VI(0, [], 0)
-    hawkes_vi_object.set_data(observations)
+    # hawkes_vi_object.set_data(observations)
 
     with open(inference_results_path, 'rb') as f:
         inference_results = pickle.load(f)
