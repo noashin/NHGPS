@@ -1,0 +1,4 @@
+data_path: path/to/yml
+settings_path: path/to/settings
+inference_results_path: path/to/inference/results
+num_test_grid_points: 300
