@@ -5,7 +5,6 @@ import pickle
 
 sys.path.append('../../')
 
-import jax
 import numpy as np
 from jax import config as config_jax
 import click
