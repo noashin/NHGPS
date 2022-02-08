@@ -84,7 +84,7 @@ def main(yml_file, output_path):
         hawkes_vi_object.induced_points_trials_inds = np.hstack(
             [np.repeat(n, hawkes_vi_object.induced_points[n].shape[0]) for n in range(hawkes_vi_object.num_trials)])
 
-    ll, intensities = hawkes_vi_object.loglikelihood_test_data_new_trials(test_observations,
+    ll, intensities = hawkes_vi_object.loglikelihood_test_data(test_observations,
                                                               num_samples=num_samples)
     ll_file = os.path.join(output_folder, 'test_ll_res.p')
     with open(ll_file, 'wb') as f:
