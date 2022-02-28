@@ -1,0 +1,4 @@
+data_path: ../gen_inf_s_g/results/10122021/20211210-175024_gen_inf_21_21/gen_data.p
+existing_grid: false
+inference_results_path: ../gen_inf_s_g/results/10122021/20211210-175024_gen_inf_21_21/inf_res.p
+settings_path: ../gen_inf_s_g/results/10122021/20211210-175024_gen_inf_21_21/input.yml
