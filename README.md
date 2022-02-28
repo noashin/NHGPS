@@ -17,3 +17,5 @@ Examples of how to perform inference can be found in the Experiments folder. It 
 - To learn how to generate data from the model see generate_data_from_the_model.ipynb.
 - The notebook estimate_s_g.ipynb includes the code to generate figure 3 in the paper.
 - The notebook single_neuron_data.ipynb contains the code to generate figures 5 and 6 in the paper.
+- The notebook Synthetic_data_inference_results.ipynb contains the code to generate figure 2 in the paper.
+
