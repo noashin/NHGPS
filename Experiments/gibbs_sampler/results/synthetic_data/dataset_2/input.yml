@@ -1,0 +1,7 @@
+data_path: ../datasets/gen_data/10052021/cosine/dataset_5.p
+inference_results_path: ../gen_data_gibbs_inference/results/cosine/20210610-111008_gibbscos5/samps.p
+num_test_grid_points_list:
+- 100
+- 150
+- 200
+settings_path: ../datasets/gen_data/10052021/cosine/settings_dataset_5.yml
