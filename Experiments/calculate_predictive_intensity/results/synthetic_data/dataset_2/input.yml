@@ -1,0 +1,17 @@
+data_path: ../datasets/gen_data/10052021/cosine/dataset_5.p
+inference_results_path: ../gen_data_inference/results/cosine/20210510-171510_gen_5/res_100_1000.p
+num_test_grid_points_list:
+- 50
+- 80
+- 100
+- 120
+- 150
+- 200
+- 250
+- 300
+- 350
+- 400
+- 450
+- 500
+- 550
+settings_path: ../datasets/gen_data/10052021/cosine/settings_dataset_5.yml
